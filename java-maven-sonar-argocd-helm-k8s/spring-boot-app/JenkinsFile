@@ -49,7 +49,6 @@ pipeline {
         environment {
             GIT_REPO_NAME = "Jenkins-Zero-To-Hero"
             GIT_USER_NAME = "shamiltheshaikh97"
-           sh MY_RANDOM_NUMBER=$(shuf -i 1-100 -n 1)
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
@@ -57,7 +56,7 @@ pipeline {
                     git config user.email "shamiltheshaikh97@gmail.com"
                     git config user.name "shamiltheshaikh97"
                     BUILD_NUMBER=${BUILD_NUMBER}
-                    sed -i "s/$MY_RANDOM_NUMBER/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+                    sed -i "s/2/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                     git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
