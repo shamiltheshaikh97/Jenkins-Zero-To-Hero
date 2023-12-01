@@ -49,7 +49,7 @@ pipeline {
         environment {
             GIT_REPO_NAME = "Jenkins-Zero-To-Hero"
             GIT_USER_NAME = "shamiltheshaikh97"
-            MY_RANDOM_NUMBER=$(shuf -i 1-100 -n 1)
+           sh MY_RANDOM_NUMBER=$(shuf -i 1-100 -n 1)
         }
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
