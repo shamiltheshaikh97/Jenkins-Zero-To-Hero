@@ -1,46 +1,21 @@
 apiVersion: apps/v1
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
 kind: Deployment
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
 metadata:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
   name: spring-boot-app
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
   labels:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
     app: spring-boot-app
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
 spec:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
   replicas: 9
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
   selector:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
     matchLabels:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
       app: spring-boot-app
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
   template:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
     metadata:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
       labels:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
         app: spring-boot-app
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
     spec:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
       containers:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
       - name: spring-boot-app
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
         image: abhishekf5/ultimate-cicd:11
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
         ports:
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
         - containerPort: 8080
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
-
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
-        
-bhishekf5/ultimate-cicd:11/shamiltheshaikh97/ultimate-cicd:15/g
