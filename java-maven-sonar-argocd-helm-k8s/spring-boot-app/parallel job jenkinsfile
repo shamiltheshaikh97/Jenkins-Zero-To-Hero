@@ -1,0 +1,41 @@
+pipeline {
+    agents none
+    
+    stages {
+        stage ('Build_&_Run on Redhat & Ubuntu') {
+            parallel {
+                stage('On Redhat') {
+                    agent {label 'redhat'}
+                    stages {
+                        stage ('Build') {
+                            steps {
+                                sh 'echo building completed on redhat'
+                            }
+                        }
+                        stage ('Run') {
+                            steps {
+                                sh 'echo running completed on redhat'
+                            }
+                        }
+                    }
+                }
+                
+                stage('On Ubuntu') {
+                    agent {label 'ubuntu'}
+                    stages {
+                        stage ('Build') {
+                            steps {
+                                sh 'echo building completed on ubuntu'
+                            }
+                        }
+                        stage ('Run') {
+                            steps {
+                                sh 'echo running completed on ubuntu'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
